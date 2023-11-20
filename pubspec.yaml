@@ -1,0 +1,11 @@
+name: homehub
+description:  HomeHub SDK for Dart/Flutter A seamless integration toolkit for MinIO and MongoDB on NAS, facilitating efficient home data management. 
+version: 0.0.1
+homepage: https://github.com/maxiee/homehub_python
+
+environment:
+  sdk: '>=3.1.5 <4.0.0'
+
+dependencies:
+
+dev_dependencies:
