@@ -1,3 +1,4 @@
+import 'package:minio/io.dart';
 import 'package:minio/minio.dart';
 import 'package:mongo_dart/mongo_dart.dart';
 
@@ -30,6 +31,11 @@ class Application {
   Future<Map<String, dynamic>> insertDocument(
       String collectionName, Map<String, dynamic> document) async {
     return await getCollection(collectionName).insert(document);
+  }
+
+  Future<String> uploadFile(
+      String bucketName, String objectName, String filePath) async {
+    return await minioClient.fPutObject(bucketName, objectName, filePath);
   }
 
   String _fullMongoUri(String appName, String mongoUri) {
