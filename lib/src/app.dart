@@ -5,20 +5,8 @@ import 'package:mongo_dart/mongo_dart.dart';
 class Application {
   Application(
       {required this.appName,
-      required String mongoUri,
-      required String minioEndpoint,
-      required String accessKey,
-      required String secretKey,
-      bool secure = true}) {
-    mongoClient = Db(_fullMongoUri(appName, mongoUri));
-    minioClient = Minio(
-      endPoint: minioEndpoint,
-      accessKey: accessKey,
-      secretKey: secretKey,
-      useSSL: secure,
-    );
-    mongoClient.open(secure: secure);
-  }
+      required this.minioClient,
+      required this.mongoClient}) {}
 
   final String appName;
   late Db mongoClient;
